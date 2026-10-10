@@ -1,0 +1,370 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming Közösség</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b0b12;
+      color: #f5f5f7;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 8%;
+      background: #11111b;
+      border-bottom: 1px solid #252536;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #8b5cf6;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ddd;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #a78bfa;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 10px;
+      background: #8b5cf6;
+      color: white;
+      font-weight: bold;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:hover {
+      background: #7041d8;
+      transform: translateY(-2px);
+    }
+
+    .tiktok-btn {
+      background: #f5f5f7;
+      color: #11111b;
+    }
+
+    .tiktok-btn:hover {
+      background: #dcdce3;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 80px 8%;
+      background:
+        radial-gradient(ellipse at top right, #35205d 0%, transparent 45%),
+        #0b0b12;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 20px;
+      border: 1px solid #493276;
+      border-radius: 20px;
+      color: #c4b5fd;
+      background: #1b142b;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      color: #a78bfa;
+    }
+
+    .hero p {
+      max-width: 570px;
+      margin-bottom: 28px;
+      color: #b8b8c7;
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .secondary-btn {
+      background: #20202e;
+      border: 1px solid #37374b;
+    }
+
+    .secondary-btn:hover {
+      background: #2b2b3c;
+    }
+
+    .hero-art {
+      font-size: clamp(100px, 17vw, 200px);
+      filter: drop-shadow(0 0 35px #8b5cf655);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding: 0 8% 70px;
+    }
+
+    .stat-card {
+      padding: 25px;
+      text-align: center;
+      background: #14141f;
+      border: 1px solid #272738;
+      border-radius: 16px;
+    }
+
+    .stat-card h2 {
+      color: #a78bfa;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .stat-card p {
+      color: #aaaabb;
+    }
+
+    .community {
+      padding: 75px 8%;
+      text-align: center;
+      background: #11111b;
+      border-top: 1px solid #252536;
+    }
+
+    .community h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      margin-bottom: 15px;
+    }
+
+    .community p {
+      max-width: 620px;
+      margin: 0 auto 28px;
+      color: #b8b8c7;
+    }
+
+    .community .social-links {
+      justify-content: center;
+    }
+
+    footer {
+      padding: 25px 8%;
+      text-align: center;
+      color: #858598;
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 65px;
+        padding-bottom: 55px;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-art {
+        font-size: 120px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="#kezdolap" class="logo">
+      🎮 Gaming <span>Közösség</span>
+    </a>
+
+    <nav>
+      <a href="#kezdolap">Kezdőlap</a>
+      <a href="#kozosseg">Közösség</a>
+    </nav>
+
+    <div class="social-links">
+      <a
+        class="btn"
+        href="https://www.youtube.com/channel/UCUHmpQxwifZGBdG4onilctg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >▶ YouTube</a>
+
+      <a
+        class="btn tiktok-btn"
+        href="https://www.tiktok.com/@leventeshorts?is_from_webapp=1&sender_device=pc"
+        target="_blank"
+        rel="noopener noreferrer"
+      >♪ TikTok</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="kezdolap">
+      <div class="hero-content">
+        <span class="tag">🎮 Üdv a közösségben!</span>
+
+        <h1>
+          A játék jobb <span>együtt.</span>
+        </h1>
+
+        <p>
+          Ez a Gaming Közösség helye, ahol a játék,
+          a jó hangulat és a közös élmények találkoznak.
+          Nézz körül, és csatlakozz hozzánk a közösségi oldalakon!
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn"
+             href="https://www.youtube.com/channel/UCUHmpQxwifZGBdG4onilctg"
+             target="_blank"
+             rel="noopener noreferrer">
+            YouTube megtekintése
+          </a>
+
+          <a class="btn secondary-btn"
+             href="https://www.tiktok.com/@leventeshorts?is_from_webapp=1&sender_device=pc"
+             target="_blank"
+             rel="noopener noreferrer">
+            TikTok megtekintése
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">🎮</div>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card">
+        <h2>🤝 Közösség</h2>
+        <p>Ismerkedés és közös játék</p>
+      </div>
+
+      <div class="stat-card">
+        <h2>🕹️ Gaming</h2>
+        <p>Játék és szórakozás</p>
+      </div>
+
+      <div class="stat-card">
+        <h2>✨ Jó hangulat</h2>
+        <p>Élmények együtt</p>
+      </div>
+    </section>
+
+    <section class="community" id="kozosseg">
+      <h2>Kövess minket! 🚀</h2>
+
+      <p>
+        Nézd meg a videókat, kövess minket a közösségi oldalakon,
+        és maradj naprakész a Gaming Közösség újdonságaival!
+      </p>
+
+      <div class="social-links">
+        <a
+          class="btn"
+          href="https://www.youtube.com/channel/UCUHmpQxwifZGBdG4onilctg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >▶ YouTube-csatorna</a>
+
+        <a
+          class="btn tiktok-btn"
+          href="https://www.tiktok.com/@leventeshorts?is_from_webapp=1&sender_device=pc"
+          target="_blank"
+          rel="noopener noreferrer"
+        >♪ TikTok-profil</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Gaming Közösség · Minden jog fenntartva.
+  </footer>
+
+</body>
+</html>
+```
